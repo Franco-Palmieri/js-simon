@@ -21,28 +21,30 @@ while (randomNums.length < 5){ //5 numeri
 alert(randomNums);
 // NUMERI INSERITI DALL'UTENTE
 var userNums = [];
-
-for(x = 0; x < 5; x++){
-    var clock = setTimeout(function () {
-        var userNum = parseInt(prompt("inserisci numero"));
+var risultato = document.getElementById("result");
+setTimeout(function () {
+    for(x = 0; x < 5; x++){
         
-        if(!isInArray(userNums, userNum)){
+        var userNum = parseInt(prompt("inserisci numero"));
             
+        if(!isInArray(userNums, userNum)){
+                
             if(isInArray(randomNums, userNum)){
-                userNums.push(userNum);
-            }
+                    userNums.push(userNum);
+                }
 
         }else{
             alert("il numero è gia stato inserito")
         }
-    },3000);
-}
+    }
+    if(userNums.length == 5){
+        risultato.innerHTML = "HAI VINTO I NUMERI ERANO: " + userNums;
+    }else{
+        risultato.innerHTML = "HAI PERSO IL TUO PUNTEGGIO è DI: " + userNums.length;
+    }
+},3000);
+
 
 console.log(userNums);
 console.log(randomNums)
 
-if(userNums.length == 5){
-    document.getElementById("result").innerHTML = "HAI VINTO I NUMERI ERANO: " + userNums;
-}else{
-    alert("funziona?")
-}
