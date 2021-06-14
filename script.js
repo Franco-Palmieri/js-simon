@@ -43,4 +43,6 @@ console.log(randomNums)
 
 if(userNums.length == 5){
     document.getElementById("result").innerHTML = "HAI VINTO I NUMERI ERANO: " + userNums;
+}else{
+    alert("funziona?")
 }
