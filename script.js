@@ -1,10 +1,23 @@
-var randomNum1 = parseInt(Math.floor(Math.random()* 100 + 1));
-var randomNum2 = parseInt(Math.floor(Math.random()* 100 + 1));
-var randomNum3 = parseInt(Math.floor(Math.random()* 100 + 1));
-var randomNum4 = parseInt(Math.floor(Math.random()* 100 + 1));
-var randomNum5 = parseInt(Math.floor(Math.random()* 100 + 1));
-var randomNum = alert(randomNum1 + " " + randomNum2 + " " + randomNum3 + " " + randomNum4 + " " + randomNum5);
-var randomNums = [];
 
-randomNum;
-randomNums.push(randomNum);
+function isInArray(array, element) {
+    for (var x = 0; x < array.length; x++) {
+        if (element === array[x]) {
+            return true;
+        }
+    }
+    return false;
+}
+function getRandomNum(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
+  }
+
+var randomNums = [];
+ 
+while (randomNums.length < 5){ //5 numeri
+    var num = getRandomNum(1, 100);
+    if (!isInArray(randomNums, num)){ //se il numero non è presente nell'array viene pushato
+        randomNums.push(num);
+    }        
+}
+alert(randomNums);
+
