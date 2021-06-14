@@ -10,7 +10,7 @@ function isInArray(array, element) {
 function getRandomNum(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
   }
-
+// NUMERI RANDOMICI GENERATI DAL PC
 var randomNums = [];
  
 while (randomNums.length < 5){ //5 numeri
@@ -20,4 +20,22 @@ while (randomNums.length < 5){ //5 numeri
     }        
 }
 alert(randomNums);
+// NUMERI INSERITI DALL'UTENTE
+var userNums = [];
 
+for(x = 0; x < 5; x++){
+    var clock = setTimeout(function () {
+        var userNum = parseInt(prompt("inserisci numero"));
+        if(!isInArray(userNums, userNum)){
+            
+            if(isInArray(randomNums, userNum)){
+                userNums.push(userNum);
+            }else{
+                
+            }
+
+        }else{
+            alert("il numero è gia stato inserito")
+        }
+    },3000);
+}
