@@ -1,4 +1,3 @@
-
 function isInArray(array, element) {
     for (var x = 0; x < array.length; x++) {
         if (element === array[x]) {
@@ -26,16 +25,22 @@ var userNums = [];
 for(x = 0; x < 5; x++){
     var clock = setTimeout(function () {
         var userNum = parseInt(prompt("inserisci numero"));
+        
         if(!isInArray(userNums, userNum)){
             
             if(isInArray(randomNums, userNum)){
                 userNums.push(userNum);
-            }else{
-                
             }
 
         }else{
             alert("il numero è gia stato inserito")
         }
     },3000);
+}
+
+console.log(userNums);
+console.log(randomNums)
+
+if(userNums.length == 5){
+    document.getElementById("result").innerHTML = "HAI VINTO I NUMERI ERANO: " + userNums;
 }
